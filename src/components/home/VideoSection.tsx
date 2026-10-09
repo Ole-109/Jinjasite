@@ -48,10 +48,10 @@ export function VideoSection() {
                   className="object-cover opacity-80 transition duration-[1500ms] group-hover:scale-[1.03] group-hover:opacity-95"
                 />
                 <span className="absolute inset-0 bg-gradient-to-t from-sumi/80 via-transparent to-sumi/20" />
-                <span className="absolute top-1/2 left-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-washi/60 backdrop-blur-sm transition duration-500 group-hover:scale-110 group-hover:border-gold-soft sm:h-24 sm:w-24">
+                <span className="absolute top-1/2 left-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-washi/60 backdrop-blur-sm transition duration-500 group-hover:scale-110 group-hover:border-gold-soft sm:h-24 sm:w-24 sm:-translate-y-1/2">
                   <span className="ml-1.5 h-0 w-0 border-y-[11px] border-l-[18px] border-y-transparent border-l-washi transition group-hover:border-l-gold-soft" />
                 </span>
-                <span className="absolute bottom-5 left-5 text-left sm:bottom-8 sm:left-8">
+                <span className="absolute bottom-5 left-5 hidden text-left sm:bottom-8 sm:left-8 sm:block">
                   <span className="font-mincho block text-lg tracking-[0.2em] sm:text-2xl">{video.title}</span>
                   <span className="font-latin mt-1 block text-xs text-gold-soft">{video.duration}</span>
                 </span>

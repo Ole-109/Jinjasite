@@ -56,7 +56,17 @@ export default function AccessPage() {
               allowFullScreen
             />
           </div>
-          <address className="mt-8 text-center text-sm leading-loose text-ink-soft not-italic">
+          <p className="mt-5 text-center">
+            <a
+              href={site.mapLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs tracking-[0.25em] text-shu underline-offset-4 hover:underline"
+            >
+              Google マップで開く ↗
+            </a>
+          </p>
+          <address className="mt-6 text-center text-sm leading-loose text-ink-soft not-italic">
             <span className="font-mincho text-base tracking-[0.2em] text-ink">{site.officeName}</span>
             <br />
             {site.postalCode} {site.address}

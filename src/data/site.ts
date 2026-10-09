@@ -15,8 +15,8 @@ export const site = {
   elevation: "1,076m",
   founded: "紀元前37年（崇神天皇の御宇）",
   geo: { lat: 33.9241, lng: 135.8226 },
-  mapEmbed:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26485.30387188982!2d135.78497656626973!3d33.92407242146389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6006589be6e737e7%3A0xdca154be13b7133d!2z44CSNjM3LTE0NDQg5aWI6Imv55yM5ZCJ6YeO6YOh5Y2B5rSl5bed5p2R5bGx5omL6LC3!5e0!3m2!1sja!2sjp!4v1661490705117!5m2!1sja!2sjp",
+  mapEmbed: "https://www.google.com/maps?q=%E7%8E%89%E7%BD%AE%E7%A5%9E%E7%A4%BE%20%E5%8D%81%E6%B4%A5%E5%B7%9D%E6%9D%91&z=12&output=embed",
+  mapLink: "https://www.google.com/maps/search/?api=1&query=%E7%8E%89%E7%BD%AE%E7%A5%9E%E7%A4%BE%20%E5%8D%81%E6%B4%A5%E5%B7%9D%E6%9D%91",
   videos: [
     { id: "Mahrb5iSlPQ", title: "神の棲む杜 ショートVer.", duration: "30秒", thumb: "/images/video-short.jpg" },
     { id: "pX46wMRdkDs", title: "神の棲む杜 ロングVer.", duration: "5分30秒", thumb: "/images/video-long.jpg" },

@@ -344,7 +344,7 @@ export const news: NewsPost[] = [
       { type: "p", text: "広報紙「玉置之巨杉」第１３号（令和７年２月１日）を掲載しました。第１号から第１３号までのバックナンバーを、広報紙のページでご覧いただけます。" },
     ],
     attachments: [
-      { label: "第１３号 PDF（令和７年２月１日）", href: "http://tamakijinja.or.jp/weblog/wp-content/uploads/2025/02/tamaki_no_oosugi-13.pdf" },
+      { label: "第１３号 PDF（令和７年２月１日）", href: "https://tamakijinja.or.jp/weblog/wp-content/uploads/2025/02/tamaki_no_oosugi-13.pdf" },
     ],
     related: { href: "/kouhoushi", label: "広報紙バックナンバー" },
   },
@@ -405,8 +405,8 @@ export const news: NewsPost[] = [
       },
     ],
     attachments: [
-      { label: "進捗状況 令和3年5月現在（PDF）", href: "http://www.tamakijinja.or.jp/images/r_daikaisyuu_sintyoku_20210530.pdf" },
-      { label: "進捗状況 令和3年2月現在（PDF）", href: "http://www.tamakijinja.or.jp/images/r_daikaisyuu_sintyoku_20210224.pdf" },
+      { label: "進捗状況 令和3年5月現在（PDF）", href: "https://www.tamakijinja.or.jp/images/r_daikaisyuu_sintyoku_20210530.pdf" },
+      { label: "進捗状況 令和3年2月現在（PDF）", href: "https://www.tamakijinja.or.jp/images/r_daikaisyuu_sintyoku_20210224.pdf" },
     ],
     related: { href: "/visit#reiwa", label: "令和の大改修について" },
   },

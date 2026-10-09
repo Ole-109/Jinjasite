@@ -952,7 +952,7 @@ export const roadReports: RoadReport[] = [
       "国道168号十津川温泉周辺（平谷地内）片側交互通行規制実施",
       "10月26日（土）14時30分～20時00分",
     ],
-    links: [{ label: "迂回路案内（PDF）", href: "http://tamakijinja.or.jp/weblog/wp-content/uploads/2024/10/20241026_ukairo.pdf" }],
+    links: [{ label: "迂回路案内（PDF）", href: "https://tamakijinja.or.jp/weblog/wp-content/uploads/2024/10/20241026_ukairo.pdf" }],
   },
   {
     id: "2024-09-21",

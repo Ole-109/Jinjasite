@@ -24,7 +24,7 @@ export function HomeIntro() {
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid items-center gap-16 lg:grid-cols-[auto_1fr] lg:gap-24">
           <Reveal className="flex justify-center lg:justify-start">
-            <h2 className="font-mincho tategaki h-[19rem] text-3xl leading-[2.1] font-medium tracking-[0.35em] text-ink sm:h-[24rem] sm:text-4xl">
+            <h2 className="font-mincho tategaki text-[1.7rem] leading-[2.1] font-medium tracking-[0.3em] whitespace-nowrap text-ink sm:text-4xl">
               <span className="block">悠久の霧に抱かれし</span>
               <span className="block pt-16 text-shu-deep">熊野三山の奥院</span>
             </h2>
