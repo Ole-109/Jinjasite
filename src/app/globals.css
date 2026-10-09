@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────
+   玉置神社 — Design tokens
+   「神の棲む杜」: sumi ink, cedar, mist, washi, gold leaf, shu-vermilion
+   ────────────────────────────────────────────── */
+
+@theme {
+  /* Ink & forest (dark surfaces) */
+  --color-sumi: #0c0e0c;
+  --color-sumi-2: #131714;
+  --color-cedar: #1c2620;
+  --color-cedar-2: #26332b;
+  --color-moss: #4a5a48;
+  --color-lichen: #8a9686;
+
+  /* Mist & paper (light surfaces) */
+  --color-mist: #d4d8d1;
+  --color-washi: #f5f1e8;
+  --color-kinari: #ece5d5;
+  --color-paper: #e3dac5;
+  --color-ink: #1e201d;
+  --color-ink-soft: #4b4e48;
+
+  /* Accents */
+  --color-gold: #b9995c;
+  --color-gold-soft: #d6c08f;
+  --color-shu: #b23c25;
+  --color-shu-deep: #8c2b1a;
+
+  /* Type */
+  --font-mincho: var(--font-shippori), "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-gothic: var(--font-zen-kaku), "Hiragino Sans", "Yu Gothic", sans-serif;
+  --font-latin: var(--font-cormorant), "Times New Roman", serif;
+
+  /* Motion */
+  --ease-silk: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-mist-drift: mist-drift 60s linear infinite;
+  --animate-mist-drift-slow: mist-drift 110s linear infinite reverse;
+  --animate-float-slow: float-slow 9s ease-in-out infinite;
+  --animate-scroll-cue: scroll-cue 2.4s var(--ease-silk) infinite;
+
+  @keyframes mist-drift {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-50%, 0, 0); }
+  }
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes scroll-cue {
+    0% { transform: scaleY(0); transform-origin: top; }
+    45% { transform: scaleY(1); transform-origin: top; }
+    55% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+}
+
+:root {
+  color-scheme: light;
+  --header-h: 5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: var(--header-h);
+}
+
+body {
+  background: var(--color-washi);
+  color: var(--color-ink);
+  font-family: var(--font-gothic);
+  font-feature-settings: "palt";
+  letter-spacing: 0.04em;
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-sumi);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* ── Utilities ─────────────────────────────── */
+
+@utility font-mincho {
+  font-family: var(--font-mincho);
+  font-feature-settings: "palt";
+}
+@utility font-latin {
+  font-family: var(--font-latin);
+  letter-spacing: 0.12em;
+}
+
+/* Vertical Japanese writing */
+@utility tategaki {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-feature-settings: "vpal";
+}
+
+/* Washi paper texture (subtle fiber noise) */
+@utility washi-texture {
+  background-color: var(--color-washi);
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.40 0 0 0 0 0.30 0 0 0 0.07 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Dark grain for sumi surfaces */
+@utility sumi-texture {
+  background-color: var(--color-sumi);
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(74, 90, 72, 0.18), transparent 60%),
+    radial-gradient(ellipse at 90% 100%, rgba(185, 153, 92, 0.06), transparent 55%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.035 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Thin gold hairline */
+@utility hairline-gold {
+  background: linear-gradient(90deg, transparent, var(--color-gold) 20%, var(--color-gold) 80%, transparent);
+  height: 1px;
+}
+
+/* Prose for long-form shrine text */
+@utility prose-jinja {
+  font-size: 1rem;
+  line-height: 2.1;
+  letter-spacing: 0.06em;
+  & p + p { margin-top: 1.4em; }
+  & ruby rt { font-size: 0.55em; letter-spacing: 0; color: var(--color-ink-soft); }
+}
+
+/* Reveal-on-scroll (paired with <Reveal/>) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(6px);
+  transition:
+    opacity 1.4s var(--ease-silk),
+    transform 1.4s var(--ease-silk),
+    filter 1.4s var(--ease-silk);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal { opacity: 1; transform: none; filter: none; }
+}
