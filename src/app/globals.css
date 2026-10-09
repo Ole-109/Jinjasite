@@ -40,6 +40,17 @@
   --animate-mist-drift-slow: mist-drift 110s linear infinite reverse;
   --animate-float-slow: float-slow 9s ease-in-out infinite;
   --animate-scroll-cue: scroll-cue 2.4s var(--ease-silk) infinite;
+  --animate-hero-zoom: hero-zoom 28s ease-out both;
+  --animate-hero-in: hero-in 2.4s var(--ease-silk) both;
+
+  @keyframes hero-zoom {
+    from { transform: scale(1.14); }
+    to { transform: scale(1); }
+  }
+  @keyframes hero-in {
+    from { opacity: 0; filter: blur(12px); transform: translateY(16px); }
+    to { opacity: 1; filter: blur(0); transform: none; }
+  }
 
   @keyframes mist-drift {
     from { transform: translate3d(0, 0, 0); }
